@@ -1,0 +1,33 @@
+* {
+    font-family: arial, "Microsoft Yahei", sans-serif;
+}
+
+.container {
+    position: fixed;
+    width: 500px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1 {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol {
+    padding-left: 150px;
+    list-style-position: inside;
+
+    li {
+        text-align: left;
+        font-size: 1.5em;
+        line-height: 2em;
+    }
+}
+

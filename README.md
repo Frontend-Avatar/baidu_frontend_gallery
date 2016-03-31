@@ -1,2 +1,2 @@
-# baidu_frontend_gallery作品展示页面
+#Avatar团队的作品展示页面
 
