@@ -1,33 +1,89 @@
 * {
+    box-sizing: border-box;
     font-family: arial, "Microsoft Yahei", sans-serif;
 }
 
 .container {
     position: fixed;
-    width: 500px;
     top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    width: 1000px;
     text-align: center;
+    transform: translate(-50%, -50%);
 }
 
 h1 {
     font-weight: 500;
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
 }
 
 a {
+    display:block;
+    line-height: 1.5em;
     text-decoration: none;
 }
 
-ol {
-    padding-left: 150px;
-    list-style-position: inside;
-
-    li {
-        text-align: left;
-        font-size: 1.5em;
-        line-height: 2em;
-    }
+a:hover {
+    color: #d10000;
 }
 
+ol {
+    display: block;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 1000px;
+    text-align: left;
+    li {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        width: 200px;
+        height: 100px;
+        font-size: 1em;
+        line-height: 2em;
+        text-align: center;
+        perspective: 600px;
+    }
+    .box-front {
+        position: absolute;
+        top: 0;
+        z-index: 900;
+        padding: 10px;
+        border: 1px solid #cecece;
+        width: inherit;
+        height: inherit;
+        box-shadow: 0 0 1px 1px #cecece;
+        transition: all 1s ease;
+        transform: rotateX(0deg) rotateY(0deg);
+        cursor: pointer;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+    li:hover .box-front {
+        z-index: 900;
+        transform: rotateY(180deg);
+    }
+    .box-back {
+        position: absolute;
+        top: 0;
+        z-index: 1000;
+        border: 1px solid #cecece;
+        padding-top: 10px;
+        width: inherit;
+        height: inherit;
+        background: #fff;
+        box-shadow: 0 0 1px 1px #cecece;
+        transition: all 1s ease;
+        transform: rotateY(-180deg);
+        cursor: pointer;
+        backface-visibility: hidden;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+    li:hover .box-back {
+        z-index: 1000;
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+}
